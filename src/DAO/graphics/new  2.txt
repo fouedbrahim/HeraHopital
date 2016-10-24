@@ -1,0 +1,3 @@
+app/pidev-project/GestionDoctotDisp!ttma.services.Interfaces.GestionDoctorDispRemote
+app/pidev-project/GestionConsultationApp!ttma.services.Interfaces.GestionConsAppRemote
+app/pidev-project/GestionDemandeCons!ttma.services.Interfaces.GestionDemandeConsAppRemote

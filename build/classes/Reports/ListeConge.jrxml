@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6aa97290-41ad-4afb-afef-fd5f78353e78">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="6"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     conge.`id_conge` AS conge_id_conge,
+     conge.`nom_user` AS conge_nom_user,
+     conge.`cin_user` AS conge_cin_user,
+     conge.`type_user` AS conge_type_user,
+     conge.`date_deb_conge` AS conge_date_deb_conge,
+     conge.`date_fin_conge` AS conge_date_fin_conge,
+     conge.`Rep_directeur` AS conge_Rep_directeur,
+     conge.`Email` AS conge_Email
+FROM
+     `conge` conge]]>
+	</queryString>
+	<field name="conge_id_conge" class="java.lang.Integer"/>
+	<field name="conge_nom_user" class="java.lang.String"/>
+	<field name="conge_type_user" class="java.lang.String"/>
+	<field name="conge_date_deb_conge" class="java.lang.String"/>
+	<field name="conge_cin_user" class="java.lang.String"/>
+	<field name="conge_date_fin_conge" class="java.lang.String"/>
+	<field name="conge_Rep_directeur" class="java.lang.String"/>
+	<field name="conge_Email" class="java.lang.String"/>
+	<group name="conge_Rep_directeur">
+		<groupExpression><![CDATA[$F{conge_Rep_directeur}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#333333" uuid="4e6247b6-a103-430e-a3ad-0ee8154af9c0"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{conge_Rep_directeur}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="482aaad3-4357-4b4d-86f2-cfc9041b09e6"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="66aff9fe-7c87-4f65-be4f-0e348731d27f"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="b97e3cd7-5e49-4592-abc0-ba343b3a00c9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Liste de  conges:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="2522aa91-aed9-4eb9-86df-92a84d29faf1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="79" height="15" uuid="a0500d72-d0c2-4c25-b7c2-de5bd403aafc"/>
+				<text><![CDATA[conge_id_conge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="19" width="79" height="15" uuid="23692c95-b698-47a0-b3bc-ecc0419b04d3"/>
+				<text><![CDATA[conge_nom_user]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="7ae3ecc5-9ce2-473d-85a8-6948ea95811b"/>
+				<text><![CDATA[conge_type_user]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="ad19c5a9-9eff-43f9-b9f7-1da57c6b2d8c"/>
+				<text><![CDATA[conge_date_deb_conge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="316" y="19" width="79" height="15" uuid="c60b75f1-10e9-42e9-b5f2-498ad985332d"/>
+				<text><![CDATA[conge_cin_user]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="395" y="19" width="79" height="15" uuid="f18d4af2-d08b-4d16-953d-293d5fbf268c"/>
+				<text><![CDATA[conge_date_fin_conge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="474" y="19" width="79" height="15" uuid="31ef923b-c000-484a-b7d8-f6b1a08a6c3d"/>
+				<text><![CDATA[conge_Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="38eeb2c7-24ed-448f-9ecf-b37b68a02427"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="79" height="15" uuid="78d83d52-b148-47e7-a805-6b4bdc6c41ea"/>
+				<textFieldExpression><![CDATA[$F{conge_id_conge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="79" y="0" width="79" height="15" uuid="9f2356ed-e440-40c3-810e-359431477c09"/>
+				<textFieldExpression><![CDATA[$F{conge_nom_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="158" y="0" width="79" height="15" uuid="7eebed9c-9843-438e-ad5a-b99e434f21ae"/>
+				<textFieldExpression><![CDATA[$F{conge_type_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="0" width="79" height="15" uuid="5b46657c-43d4-4743-8c98-a4ba54e1ba4a"/>
+				<textFieldExpression><![CDATA[$F{conge_date_deb_conge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="316" y="0" width="79" height="15" uuid="ad1cbac2-6245-4fa3-8d64-03d542a030a4"/>
+				<textFieldExpression><![CDATA[$F{conge_cin_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="395" y="0" width="79" height="15" uuid="5800a267-7df3-4816-ac0c-6bf1d4139a61"/>
+				<textFieldExpression><![CDATA[$F{conge_date_fin_conge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="474" y="0" width="79" height="15" uuid="c20c010d-a38f-44f9-945e-6048cc3a70a0"/>
+				<textFieldExpression><![CDATA[$F{conge_Email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="ec2dd23e-550a-4a1b-91cc-2840304ee400"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9b4a48b7-82eb-41e0-8135-938cdaa5ee24"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="71c01a2c-4fd5-41e5-9a59-81445f33354e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="290805b9-d0a9-406c-ba72-f0203cf047e8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
